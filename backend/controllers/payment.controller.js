@@ -92,6 +92,7 @@ exports.createOrder = async (req, res) => {
 
   try {
     razorpayInstance.orders.create(options, (err, order) => {
+      console.log("Order created:", order);
       if (err) {
         console.error("Order creation error:", err);
         return res.status(500).json({
